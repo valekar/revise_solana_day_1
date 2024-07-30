@@ -6,6 +6,7 @@ skip-lint = false
 
 [programs.localnet]
 day_1 = "AyoQw58UPLqi5gKuhzYTi4Kcd9BcfxNuetUv95p6vdMo"
+sysvars = "F9fPdvxQsdKLeHjfQe5Jb2fsBZWyH5zBKgFmm6VJnrGw"
 
 [registry]
 url = "https://api.apr.dev"

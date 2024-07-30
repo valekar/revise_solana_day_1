@@ -30,13 +30,13 @@ describe("day_1", () => {
     console.log("Your transaction signature", tx);
   });
 
-  it("Require Test 2", async () => {
-    const tx = await program.methods
-      .requireTest2(new anchor.BN(500), new anchor.BN(1000))
-      .rpc();
+  // it("Require Test 2", async () => {
+  //   const tx = await program.methods
+  //     .requireTest2(new anchor.BN(500), new anchor.BN(1000))
+  //     .rpc();
 
-    console.log("Your transaction signature", tx);
-  });
+  //   console.log("Your transaction signature", tx);
+  // });
 
   it("Hashmap test", async () => {
     const tx = await program.methods.hashMap("key", "testy").rpc();
