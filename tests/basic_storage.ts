@@ -15,7 +15,7 @@ describe("Basic Storage Test", () => {
     await addSols(program.provider, newAuthority.publicKey, 2);
   });
 
-  /*it("Is initialized!", async () => {
+  it("Is initialized!", async () => {
     // Add your test here.
 
     const seeds = [];
@@ -40,7 +40,7 @@ describe("Basic Storage Test", () => {
     const tx = await program.provider.sendAndConfirm!(transaction, []);
 
     console.log("Your transaction signature", tx);
-  }); */
+  });
 
   it("Set Variable X", async () => {
     const seeds = [];
