@@ -1202,6 +1202,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "relloc_example"
+version = "0.1.0"
+dependencies = [
+ "anchor-lang",
+]
+
+[[package]]
 name = "rustc-hash"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

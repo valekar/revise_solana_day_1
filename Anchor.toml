@@ -8,6 +8,7 @@ skip-lint = false
 basic_storage = "HTfqYyFeQgM6nzGfDWWVTJwrPVRJu23YG51zT7gn9isA"
 day_1 = "AyoQw58UPLqi5gKuhzYTi4Kcd9BcfxNuetUv95p6vdMo"
 example_map = "GR9RF1G4JjrHMRPeG1hkv15yLWucbR9fHw2RkKR6r9jT"
+relloc_example = "D9fCPfoPDbzNZmPXSetSveWP9755z3RnMLh2kvPttWbP"
 sysvars = "F9fPdvxQsdKLeHjfQe5Jb2fsBZWyH5zBKgFmm6VJnrGw"
 
 [registry]
