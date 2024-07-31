@@ -5,6 +5,7 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
+basic_storage = "HTfqYyFeQgM6nzGfDWWVTJwrPVRJu23YG51zT7gn9isA"
 day_1 = "AyoQw58UPLqi5gKuhzYTi4Kcd9BcfxNuetUv95p6vdMo"
 sysvars = "F9fPdvxQsdKLeHjfQe5Jb2fsBZWyH5zBKgFmm6VJnrGw"
 
