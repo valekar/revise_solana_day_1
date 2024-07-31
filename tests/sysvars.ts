@@ -1,6 +1,5 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
-import { Transaction } from "@solana/web3.js";
 import { Sysvars } from "../target/types/sysvars";
 import { addSols } from "./utils";
 
@@ -25,7 +24,7 @@ describe("SysVar Test", () => {
       })
       .instruction();
 
-    const transaction = new Transaction();
+    const transaction = new anchor.web3.Transaction();
     transaction.add(instruction);
 
     const tx = await program.provider.sendAndConfirm!(transaction, [
