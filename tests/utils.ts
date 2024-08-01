@@ -32,3 +32,20 @@ export const airdropSol = async (
 
   await confirmTransaction(tx);
 };
+
+export const getSamplePDA = (programId) => {
+  const seeds = [];
+  const pdaAccount = anchor.web3.PublicKey.findProgramAddressSync(
+    seeds,
+    programId
+  )[0];
+
+  return pdaAccount;
+};
+
+export const buildAndSendTransaction = async (instructions, program) => {
+  const transaction = new anchor.web3.Transaction();
+  transaction.add(...instructions);
+  const tx = await program.provider.sendAndConfirm!(transaction, []);
+  console.log("Your transaction signature", tx);
+};
