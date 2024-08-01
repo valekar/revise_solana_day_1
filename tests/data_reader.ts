@@ -1,13 +1,13 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
-import { PdaExample } from "../target/types/pda_example";
+import { DataReader } from "../target/types/data_reader";
 import { buildAndSendTransaction, getSamplePDA } from "./utils";
 
-describe("SysVar Test", () => {
+describe("Data Reader Test", () => {
   // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
 
-  const program = anchor.workspace.PdaExample as Program<PdaExample>;
+  const program = anchor.workspace.DataReader as Program<DataReader>;
 
   it("Is initialized!", async () => {
     const pdaAccount = getSamplePDA(program.programId);
@@ -15,34 +15,31 @@ describe("SysVar Test", () => {
     const instruction = await program.methods
       .initialize()
       .accounts({
-        pda: pdaAccount,
+        storage: pdaAccount,
         signer: program.provider.publicKey,
       })
       .instruction();
 
-    const transaction = new anchor.web3.Transaction();
-    transaction.add(instruction);
-
-    const tx = await program.provider.sendAndConfirm!(transaction, []);
-
-    console.log("Your transaction signature", tx);
+    await buildAndSendTransaction([instruction], program);
   });
 
-  it("Should donate", async () => {
+  it("Should set x value", async () => {
     const pdaAccount = getSamplePDA(program.programId);
+
     const instruction = await program.methods
-      .donate(new anchor.BN(1 * anchor.web3.LAMPORTS_PER_SOL))
-      .accounts({ signer: program.provider.publicKey, pda: pdaAccount })
-      .transaction();
+      .setX(new anchor.BN(345))
+      .accounts({ storage: pdaAccount, authority: program.provider.publicKey })
+      .instruction();
 
     await buildAndSendTransaction([instruction], program);
   });
 
-  it("Should withdraw", async () => {
+  it("Should read x value", async () => {
     const pdaAccount = getSamplePDA(program.programId);
+
     const instruction = await program.methods
-      .withdraw(new anchor.BN(0.5 * anchor.web3.LAMPORTS_PER_SOL))
-      .accounts({ signer: program.provider.publicKey, pda: pdaAccount })
+      .getX()
+      .accounts({ storage: pdaAccount })
       .instruction();
 
     await buildAndSendTransaction([instruction], program);

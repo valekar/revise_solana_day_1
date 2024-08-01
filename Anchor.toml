@@ -6,6 +6,7 @@ skip-lint = false
 
 [programs.localnet]
 basic_storage = "HTfqYyFeQgM6nzGfDWWVTJwrPVRJu23YG51zT7gn9isA"
+data_reader = "2mdpoj8AzV6o8YEaKE6oRurnHkS1J4LmFYM2phDx2fmA"
 day_1 = "AyoQw58UPLqi5gKuhzYTi4Kcd9BcfxNuetUv95p6vdMo"
 example_map = "GR9RF1G4JjrHMRPeG1hkv15yLWucbR9fHw2RkKR6r9jT"
 pda_example = "5b3FiHezoqkM17jBf6YiEE3pYqDvfYbFNGuQ8mg2GdJS"
